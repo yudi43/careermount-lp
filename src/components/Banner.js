@@ -21,7 +21,7 @@ const A = () => {
     <div style={sectionStyle}>
       <div style={contentStyle}>
         <h2>Component A</h2>
-        <p>This is component A content.</p>
+        <p>This is component A contentt.</p>
       </div>
     </div>
   );

@@ -27,6 +27,25 @@ const FeaturesSection = () => {
     },
   ];
 
+  const sectionStyle = {
+    textAlign: 'center',
+  };
+
+  const headingStyle = {
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '28px',
+    fontWeight: '300',
+    margin: '40px 0',
+    color: '#333',
+  };
+
+  const containerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '20px',
+    flexWrap: 'wrap',
+  };
+
   return (
     <section style={sectionStyle}>
       <h2 style={headingStyle}>What We Offer</h2>
@@ -42,22 +61,6 @@ const FeaturesSection = () => {
       </div>
     </section>
   );
-};
-
-const sectionStyle = {
-  textAlign: 'center',
-};
-
-const headingStyle = {
-  fontFamily: 'Arial, sans-serif',
-  fontSize: '24px',
-};
-
-const containerStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  gap: '20px',
-  flexWrap: 'wrap',
 };
 
 export default FeaturesSection;

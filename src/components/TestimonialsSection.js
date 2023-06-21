@@ -1,5 +1,6 @@
 import React from 'react';
 import Testimonial from './Testimonial';
+import quoteIcon from '../assets/quoteIcon.png';
 
 const testimonials = [
     {
@@ -105,64 +106,74 @@ const testimonials = [
   ]
   
 
-const TestimonialsSection = () => {
-  const testimonialContainerStyle = {
-    display: 'flex',
-    overflow: 'hidden',
-    width: '100%',
-  };
-
-  const testimonialWrapperStyle = {
-    display: 'flex',
-    animation: 'scrollText 20s linear infinite',
-    width: `${testimonials.length * 100}%`,
-  };
-
-  const testimonialCardStyle = {
-    flex: `0 0 ${100 / testimonials.length}%`,
-    margin: '0 10px',
-  };
-
-  const headingStyle = {
-    textAlign: 'center',
-    fontFamily: 'Arial, sans-serif',
-    fontSize: '24px',
-    fontWeight: 'bold',
-  };
-  const keyframes = `
-    @keyframes scrollText {
-      0% {
-        transform: translateX(0);
+  const TestimonialsSection = () => {
+    const testimonialContainerStyle = {
+      display: 'flex',
+      overflow: 'hidden',
+      width: '100%',
+    };
+  
+    const testimonialWrapperStyle = {
+      display: 'flex',
+      animation: 'scrollText 20s linear infinite',
+      width: `${testimonials.length * 100}%`,
+    };
+  
+    const testimonialCardStyle = {
+      flex: `0 0 ${100 / testimonials.length}%`,
+      margin: '0 10px',
+    };
+  
+    const headingStyle = {
+      textAlign: 'center',
+      fontFamily: 'Arial, sans-serif',
+      fontSize: '28px',
+      fontWeight: '300',
+      margin: '40px 0',
+      color: '#333',
+    };
+  
+    const quoteIconStyle = {
+      width: '24px',
+      height: '24px',
+      marginBottom: '10px',
+    };
+  
+    const keyframes = `
+      @keyframes scrollText {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-${100 / testimonials.length}%);
+        }
       }
-      100% {
-        transform: translateX(-${100 / testimonials.length}%);
-      }
-    }
-  `;
-
-  const renderTestimonials = () => {
-    return testimonials.map((testimonial, index) => (
-      <div key={index} style={testimonialCardStyle}>
-        <Testimonial
-          rating={testimonial.rating}
-          testimonial={testimonial.testimonial}
-          name={testimonial.name}
-        />
-      </div>
-    ));
-  };
-
-  return (
-    <section>
-      <h2 style={headingStyle}>What People Say About Us</h2>
-      <style>{keyframes}</style>
-      <div style={testimonialContainerStyle}>
-        <div style={testimonialWrapperStyle}>
-          {renderTestimonials()}
+    `;
+  
+    const renderTestimonials = () => {
+      return testimonials.map((testimonial, index) => (
+        <div key={index} style={testimonialCardStyle}>
+          <img src={quoteIcon} alt="Quote Icon" style={quoteIconStyle} />
+          <Testimonial
+            rating={testimonial.rating}
+            testimonial={testimonial.testimonial}
+            name={testimonial.name}
+          />
         </div>
-      </div>
-    </section>
-  );
-};
-
-export default TestimonialsSection;
+      ));
+    };
+  
+    return (
+      <section>
+        <h2 style={headingStyle}>What People Say About Us</h2>
+        <style>{keyframes}</style>
+        <div style={testimonialContainerStyle}>
+          <div style={testimonialWrapperStyle}>
+            {renderTestimonials()}
+          </div>
+        </div>
+      </section>
+    );
+  };
+  
+  export default TestimonialsSection;

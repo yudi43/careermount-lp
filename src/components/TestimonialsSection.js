@@ -47,6 +47,12 @@ const TestimonialsSection = () => {
     margin: '0 10px',
   };
 
+  const headingStyle = {
+    textAlign: 'center',
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '24px',
+    fontWeight: 'bold',
+  };
   const keyframes = `
     @keyframes scrollText {
       0% {
@@ -72,7 +78,7 @@ const TestimonialsSection = () => {
 
   return (
     <section>
-      <h2>What People Say About Us</h2>
+      <h2 style={headingStyle}>What People Say About Us</h2>
       <style>{keyframes}</style>
       <div style={testimonialContainerStyle}>
         <div style={testimonialWrapperStyle}>

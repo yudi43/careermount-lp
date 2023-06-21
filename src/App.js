@@ -4,6 +4,7 @@ import Banner from './components/Banner';
 import FeaturesSection from './components/FeaturesSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import Footer from './components/Footer';
+import './global.css'; // Import the CSS file
 
 const App = () => {
   return (
